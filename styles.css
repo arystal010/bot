@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.game-container {
+    margin-top: 50px;
+}
+
+.tree-status {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+#tree-image {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+.actions {
+    margin-top: 20px;
+}
+
+button {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ccc;
+}

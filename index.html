@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree Care Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        button {
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tree Care Game</h1>
+    <div id="tree-status"></div>
+    <button id="water-button">Water</button>
+    <button id="prune-button">Prune</button>
+
+    <script>
+        const waterButton = document.getElementById('water-button');
+        const pruneButton = document.getElementById('prune-button');
+
+        waterButton.addEventListener('click', () => {
+            fetch('/api/water_tree')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('tree-status').innerText = data.message;
+                });
+        });
+
+        pruneButton.addEventListener('click', () => {
+            fetch('/api/prune_tree')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('tree-status').innerText = data.message;
+                });
+        });
+    </script>
+</body>
+</html>
